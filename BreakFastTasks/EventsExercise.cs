@@ -125,7 +125,7 @@ namespace CoreCollectionsAsync
             while(Bat.Percent > 15)
             {
                 Console.WriteLine($"car with id:{this.id} {Bat.Percent}& theard:{Thread.CurrentThread.ManagedThreadId}");
-                Thread.Sleep(1000);
+                await Task.Delay(1000);
                 Bat.Usage();
             }
         }
