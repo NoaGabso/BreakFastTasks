@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading;
 
@@ -118,9 +119,15 @@ namespace CoreCollectionsAsync
             engingRunning = false;
         }
 
-       public void StartEngineAsync
+       public async Task StartEngineAsync()
         {
-
+            engingRunning=true;
+            while(Bat.Percent > 15)
+            {
+                Console.WriteLine($"car with id:{this.id} {Bat.Percent}& theard:{Thread.CurrentThread.ManagedThreadId}");
+                Thread.Sleep(1000);
+                Bat.Usage();
+            }
         }
     }
     class EventsExercise

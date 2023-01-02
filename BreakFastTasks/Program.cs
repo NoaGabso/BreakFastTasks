@@ -10,6 +10,7 @@ namespace BreakFastTasks
             ElectricCar c = sender as ElectricCar;
             Console.WriteLine("Car Engine Stopped");
 
+
         }
         static void Main(string[] args)
         {
@@ -21,6 +22,17 @@ namespace BreakFastTasks
             
            
           
+        }
+        public static async Task MakeTasks()
+        {
+            Task[] t1= new Task[10];
+            ElectricCar[] c1= new ElectricCar[10];
+            for(int i=0;i<c1.Length;i++)
+            {
+                c1[i]= new ElectricCar();
+                t1[i] = c1[i].StartEngineAsync();
+            }
+            await Task.WhenAll(t1);
         }
     }
 }
