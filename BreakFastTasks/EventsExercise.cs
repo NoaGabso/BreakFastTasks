@@ -117,6 +117,11 @@ namespace CoreCollectionsAsync
         {
             engingRunning = false;
         }
+
+       public void StartEngineAsync
+        {
+
+        }
     }
     class EventsExercise
     {
